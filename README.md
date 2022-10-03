@@ -1,3 +1,2 @@
-# The Fishing Rod Project
+# The phishing-rod project
 
-The Fishing Rod Project
