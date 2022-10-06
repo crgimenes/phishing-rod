@@ -1,0 +1,19 @@
+- hosts: phishingrod
+  become: yes
+  tasks:
+  - name: Update apt cache
+    apt:
+      update_cache=yes
+      force_apt_get=yes
+      cache_valid_time=3600
+  - name: Upgrade all apt packages
+    apt:
+      upgrade=dist
+      force_apt_get=yes
+  - name: Remove useless packages from the cache
+    apt:
+      autoclean: yes
+  - name: Remove dependencies that are no longer required
+    apt:
+      autoremove: yes
+

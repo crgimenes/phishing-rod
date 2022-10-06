@@ -1,0 +1,30 @@
+- hosts: phishingrod
+  become: yes
+  tasks:
+  - name: kismet apt-key
+    apt_key: 
+      url: https://www.kismetwireless.net/repos/kismet-release.gpg.key
+      state: present
+  - name: kismet apt repository
+    apt_repository: 
+      repo: 'deb https://www.kismetwireless.net/repos/apt/release/bullseye bullseye main' 
+      state: present 
+      filename: kismet
+      update_cache: yes
+  - name: install kismet
+    apt: 
+      name: kismet
+      state: present
+      update_cache: yes
+  - name: Install main packages
+    package:
+      name: ['gpsd', 'neovim', 'python3-neovim', 'supervisor']
+      state: present
+  - name: Create etc files
+    copy:
+      src: ./payload/etc/
+      dest: /etc
+      owner: root
+      group: root
+      mode: ug+rwX,o=
+ 
