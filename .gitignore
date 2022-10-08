@@ -55,4 +55,4 @@ dkms.conf
 .vscode
 .DS_Store
 secrets.h
-
+env.sh
