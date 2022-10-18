@@ -11,3 +11,7 @@ Why the fishing rod shape? Started with a big antenna and ended up earning that 
 
 Have you ever thought about building a computer with a really customized format? Take a look https://discord.gg/BGEdHxUBSK
 
+## Raspberry Pi
+
+Enable "Predictable interface names" feature by editing /boot/cmdline.txt adding " net.ifnames=0"
+
